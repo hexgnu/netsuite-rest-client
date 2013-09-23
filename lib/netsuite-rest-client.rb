@@ -123,7 +123,6 @@ module Netsuite
                     'ignore_mandatory' => options[:ignore_mandatory] || false,
                     'static_sublist'   => options[:static_sublist] || false }
 
-
         results += parse_json_result_from_rest(:post, params, :payload=>payload)
       end
 
