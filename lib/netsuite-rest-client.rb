@@ -40,7 +40,11 @@ module Netsuite
       @search_batch_size     = options[:search_batch_size]     || DEFAULT_SEARCH_BATCH_SIZE
 
       @retry_limit = options[:retry_limit] || DEFAULT_RETRY_LIMIT
-      @base_url = :production == APP_ENV ? BASE_URL : SANDBOX_URL
+      @base_url = if options[:app_env] == :production || Netsuite::APP_ENV == :production
+                    BASE_URL
+                  else
+                    SANDBOX_URL
+                  end
     end
 
     def initialize_record(record_type)
