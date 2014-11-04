@@ -2,14 +2,13 @@ require 'rest-client'
 require 'json'
 require 'uri'
 
-
 module Netsuite
   BASE_URL                      = "https://rest.netsuite.com/app/site/hosting/restlet.nl"
   SANDBOX_URL                   = "https://rest.sandbox.netsuite.com/app/site/hosting/restlet.nl"
   DEFAULT_GET_RECORD_BATCH_SIZE = 10000
   DEFAULT_SEARCH_BATCH_SIZE     = 1000
   DEFAULT_RETRY_LIMIT           = 0
-  DEFAULT_REQUEST_TIMEOUT       = -1
+  DEFAULT_REQUEST_TIMEOUT       = nil
   DEFAULT_UPSERT_BATCH_SIZE     = 40
   DEFAULT_DELETE_BATCH_SIZE     = 60
   DEFAULT_TRANSFORM_BATCH_SIZE  = 10
